@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="host" default="192.168.0.6" />
+  <!--env name="ROS_MASTER_URI" value="http://192.168.31.185:11311"/>
+  <env name="ROS_IP" value="192.168.31.150"/-->
+  <node pkg="lms1xx" name="lms1xx" type="LMS1xx_node" output="screen">
+    <param name="host" value="$(arg host)" />
+    <remap from="/scan" to="/sick_lms141_scan" />
+    <param name="frame_id" type="string" value="laser_sick_lms141" />
+  </node>
+  <!-- node name="static_transform_publisher" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 1 base_link sick_laser" / -->
+  <node name="static_transform_publisher_sick_lms141" pkg="tf2_ros" type="static_transform_publisher" args="0.2 0 0 0 0 0 1 base_link laser_sick_lms141" />
+</launch>

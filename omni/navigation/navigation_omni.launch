@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <!--arg name="custom_param_file" default="$(find turtlebot_navigation)/param/dummy.yaml"/-->
+  <arg name="odom_topic" />
+  <arg name="laser_topic" />
+  <arg name="laser_model" />
+  <!--Move base -->
+  <include file="$(find start_scripts)/omni/navigation/includes/move_base.launch.xml">
+    <arg name="odom_topic" value="$(arg odom_topic)" />
+    <arg name="laser_topic" value="$(arg laser_topic)" />
+    <arg name="laser_model" value="$(arg laser_model)" />
+    <!--arg name="custom_param_file" value="$(arg custom_param_file)"/-->
+  </include>
+
+</launch>
+

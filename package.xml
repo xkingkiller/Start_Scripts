@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>start_scripts</name>
+  <version>0.0.0</version>
+  <description>Start scripts to start everything</description>
+
+  <maintainer email="xxx@xxx.xxx">xxx</maintainer>
+
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>
+

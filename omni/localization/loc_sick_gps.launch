@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="scan_topic"/>
+	<arg name="gps_topic" />
+	<include file="$(find start_scripts)/omni/localization/include/loc_master.launch" >
+		<arg name="scan_topic"          value="$(arg scan_topic)" />
+		<arg name="gps_topic"          value="$(arg gps_topic)" />
+	</include>
+	<node name="static_transform_publisher" pkg="tf2_ros" type="static_transform_publisher" args="74 -5.5 0 2.28 0 0 world map" />
+</launch>
